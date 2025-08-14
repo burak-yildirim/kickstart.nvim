@@ -163,9 +163,6 @@ require('lazy').setup({
   -- import plugins from the 'plugins' folder here
   { import = 'plugins' },
 
-  -- Detect tabstop and shiftwidth automatically
-  'NMAC427/guess-indent.nvim',
-
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
