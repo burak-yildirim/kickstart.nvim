@@ -54,11 +54,13 @@ local servers = {
 
       local java = require 'java'
 
-      map('<leader>jr', java.runner.built_in.run_app, 'Run the application or selected main class')
-      map('<leader>js', java.runner.built_in.stop_app, 'Stops the running application')
-      map('<leader>jb', java.build.build_workspace, 'Runs a full workspace build')
-      map('<leader>jtc', java.test.run_current_class, 'Runs the test class in the current buffer')
-      map('<leader>jtm', java.test.run_current_method, 'Runs the test method on the cursor')
+      -- Build & Run
+      map('<leader>jb', ':JavaBuildBuildWorkspace<CR>', 'Runs a full workspace build')
+      map('<leader>jr', ':JavaRunnerRunMain<CR>', 'Run the application or selected main class')
+      map('<leader>js', ':JavaRunnerStopMain<CR>', 'Stops the running application')
+      -- Testing
+      map('<leader>jtc', ':JavaTestRunCurrentClass<CR>', 'Runs the test class in the current buffer')
+      map('<leader>jtm', ':JavaTestRunCurrentMethod<CR>', 'Runs the test method on the cursor')
     end,
   },
 }
