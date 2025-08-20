@@ -236,7 +236,17 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        -- Used to format Lua code
+        'stylua',
+        {
+          -- mason installs the jar version which is very slow.
+          -- Let mason install the slow jar as a last resolution
+          -- if there is no other (fast binary)executable on the path.
+          'google-java-format ',
+          condition = function()
+            return vim.fn.executable 'google-java-format' == 0
+          end,
+        },
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
     end,
