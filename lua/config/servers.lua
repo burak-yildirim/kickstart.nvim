@@ -63,6 +63,8 @@ local servers = {
       map('<leader>jtm', ':JavaTestRunCurrentMethod<CR>', 'Runs the test method on the cursor')
     end,
   },
+  yamlls = {},
+  biome = {},
 }
 
 return servers
